@@ -1,0 +1,19 @@
+0:
+  name: '&3&lTeemo小屋'
+  player: Teemo
+  server: Default
+  location: world,0,80,0,0,0
+  createDate: 1564126403000
+  reviewed: true
+  likes: 2
+  liker: fight, 左撇子
+  iconMaterial: RED_WOOL
+  iconDurability: 0
+  introduction: "[\"真的很强的船\", \"吊的飞起\"]"
+1:
+  name: '&3&lTeemo大屋'
+  player: Teemo
+  server: Default
+  location: world,100,80,100,0,0
+  createDate: 1564126403000
+  reviewed: false

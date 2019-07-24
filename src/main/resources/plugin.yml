@@ -1,0 +1,29 @@
+name: ${artifactId}
+main: cn.daniellee.plugin.eb.ExcellentBuilding
+version: ${version}
+api-version: 1.13
+authors:
+  - DanielLee
+  - Lumine1909
+commands:
+  excellentbuilding:
+    usage: /<command>
+    aliases: [eb, excellent, building]
+    description: ExcellentBuilding.
+
+permissions:
+  building.command.*:
+    description: ability to use all commands
+    children:
+      building.command.submit: true
+      building.command.review: true
+      building.command.reload: true
+  building.command.submit:
+    default: true
+    description: ability to use apply command
+  building.command.review:
+    description: ability to use review gui
+  building.command.reload:
+    description: ability to use reload command
+  building.modify.force:
+    description: ability to force edit building info

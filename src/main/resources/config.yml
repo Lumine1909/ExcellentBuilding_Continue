@@ -1,0 +1,172 @@
+#提示信息前缀
+prompt-prefix: '&6优秀建筑'
+
+#存储配置
+storage:
+  mysql:
+    #是否使用Mysql
+    use: false
+    #连接信息
+    host: localhost
+    port: 3306
+    username: username
+    password: password
+    database: minecraft
+    parameter: 'characterEncoding=utf-8&useSSL=false&autoReconnect=true'
+    table_perfix: 'eb_'
+    #如果设置为true，下次启动自动从Yaml导入数据到Mysql
+    convert: false
+
+#基本配置
+setting:
+  #关闭头颅加载，防止卡服
+  disable-skull-load: false
+  #建筑名称最大长度
+  name-max-length: 20
+  #建筑介绍最大行数
+  introduction-max-line: 10
+  #禁用点赞广播
+  disable-like-boardcast: false
+
+#菜单配置
+menu:
+  #边角填充方块配置
+  common:
+    corner:
+      material: MAGENTA_STAINED_GLASS_PANE
+      durability: 0
+    border:
+      material: BLUE_STAINED_GLASS_PANE
+      durability: 0
+    back:
+      name: '&e回到第{page}页'
+      item:
+        material: RED_WOOL
+        durability: 0
+    next:
+      name: '&e前往第{page}页'
+      item:
+        material: LIME_WOOL
+        durability: 0
+    #提交时间格式
+    date-format: 'yyyy年MM月dd日'
+  #建筑菜单配置
+  building:
+    title: '&6&l优秀建筑'
+    button:
+      name: '&b建筑名称: &d{name} &7({id})'
+      lore:
+        - '&e建筑主人: {player}'
+        - '&e点赞人数: {likes}'
+        - '&e提交时间: {createDate}'
+        - '&e建筑介绍: {empty}'
+      operation-lore:
+        - ''
+        - '&3左键参观 &1| &3右键点赞'
+      owner-lore:
+        - ''
+        - '&3Shift+左键编辑 &d（需重新审核）'
+  #审核菜单配置
+  review:
+   title: '&6&l审核建筑'
+   button:
+     name: '&b建筑名称: &d{name} &7({id})'
+     lore:
+       - '&e建筑主人: {player}'
+       - '&e提交时间: {createDate}'
+       - '&e建筑介绍: {empty}'
+     operation-lore:
+       - ''
+       - '&3左键参观 &1| &3Shift+左键通过 &1| &3Shift+右键拒绝'
+  #空介绍显示的文字
+  empty-intro: '无'
+  #编辑菜单配置
+  edit:
+    title: '&6&l编辑建筑'
+    button:
+      name:
+        name: '&b修改名称'
+        lore:
+          - '&e编辑建筑名称'
+          - '&e需要重新审核'
+        item:
+          material: NAME_TAG
+          durability: 0
+      intro:
+        name: '&b修改介绍'
+        lore:
+          - '&e编辑建筑介绍'
+          - '&e需要重新审核'
+        item:
+          material: WRITABLE_BOOK
+          durability: 0
+      location:
+        name: '&b重设传送点'
+        lore:
+          - '&e重设传送位置'
+          - '&e点击两次确认'
+          - '&e需要重新审核'
+        item:
+          material: ENDER_PEARL
+          durability: 0
+      icon:
+        name: '&b修改图标'
+        lore:
+          - '&e将手中的物品'
+          - '&e设为建筑图标'
+          - '&e空手取消设置'
+          - '&e无需重新审核'
+        item:
+          material: BEACON
+          durability: 0
+      delete:
+        name: '&b删除建筑'
+        lore:
+          - '&e删除建筑地标'
+          - '&e点击两次确认'
+        item:
+          material: TNT
+          durability: 0
+
+#提示信息
+message:
+  reload-success: '&e配置信息重载成功'
+  player-only: '&e控制台无法打开GUI菜单'
+  apply-success: '&e成功提交优秀建筑申请'
+  has-pending: '&e你上次的申请还未被处理, 请耐心等待'
+  already-like: '&e你已经为这个建筑点过赞了'
+  review-denied: '&e成功拒绝了此建筑的审核'
+  visit-success: '&e成功传送到目标建筑'
+  visit-failed: '&e暂时无法将你传送到目标建筑'
+  server-invalid: '&e目标服务器未在运行'
+  typein-chat: '&e请将新名称输入聊天框, 输入cancel可取消'
+  edit-canceled: '&e编辑操作已取消'
+  invalid-name: '&e名称长度须小于 &b{length} &e个字符'
+  setname-success: '&e成功修改建筑名称, 管理将尽快为您审核'
+  intro-mode: '&e进入介绍编辑模式, 发送 &badd 内容 &e添加行, 发送 &bset 行号 内容 &e修改行, 发送 &bdel 行号 &e删除一行, 发送 &bok &e完成, 发送 &bcancel &e取消, 当前介绍内容为:'
+  edit-intro: '&e编辑成功, 当前介绍内容为:'
+  intro-tips: '&e(&badd 内容 &e添加行, &bset 行号 内容 &e修改行, &bdel 行号 &e删除一行, &bok &e完成, &bcancel &e取消)'
+  incorrect-format: '&e格式有误, 请检查后重新发送'
+  incorrect-line: '&e行号有误, 请检查后重新发送'
+  reach-max-line: '&e已达到最大行数, 无法继续添加'
+  setintro-success: '&e成功修改建筑介绍, 管理将尽快为您审核'
+  reclick-setloc: '&e再次点击确认更新位置'
+  setloc-success: '&e成功更新建筑位置, 管理将尽快为您审核'
+  seticon-success: '&e成功更新建筑图标'
+  reclick-delete: '&e再次点击确认删除建筑'
+  delete-success: '&e成功删除建筑'
+  boardcast:
+    like-success: '&d{player}&e已成功为&c{owner}&e的建筑&d{name}&e点赞！'
+    review-pass: '&c{owner}&e的建筑&d{name}&e已通过优秀建筑审核, &b/eb &e前往参观!'
+
+#建筑标签
+valid-tags:
+  - '测试标签'
+  - '建筑'
+
+#帮助信息
+help:
+  main: '&e打开建筑浏览GUI菜单'
+  review: '&e打开建筑审核GUI菜单'
+  submit: '&e提交建筑审核申请'
+  reload: '&e重载插件配置文件'
