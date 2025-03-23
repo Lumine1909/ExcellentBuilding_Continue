@@ -4,136 +4,124 @@ import cn.daniellee.plugin.eb.menu.filter.TagHandler;
 
 public class Building {
 
-	private String id;
+    private String id;
+    private String name;
+    private String player;
+    private String server;
+    private String location;
+    private long createDate;
+    private boolean reviewed;
+    private int likes;
+    private String liker;
+    private String iconMaterial;
+    private int iconDurability;
+    private String introduction;
+    private TagHandler tags;
 
-	private String name;
+    public String getId() {
+        return id;
+    }
 
-	private String player;
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	private String server;
+    public String getName() {
+        return name;
+    }
 
-	private String location;
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	private long createDate;
+    public String getPlayer() {
+        return player;
+    }
 
-	private boolean reviewed;
+    public void setPlayer(String player) {
+        this.player = player;
+    }
 
-	private int likes;
+    public String getServer() {
+        return server;
+    }
 
-	private String liker;
+    public void setServer(String server) {
+        this.server = server;
+    }
 
-	private String iconMaterial;
+    public String getLocation() {
+        return location;
+    }
 
-	private int iconDurability;
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
-	private String introduction;
+    public long getCreateDate() {
+        return createDate;
+    }
 
-	private TagHandler tags;
+    public void setCreateDate(long createDate) {
+        this.createDate = createDate;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public boolean isReviewed() {
+        return reviewed;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setReviewed(boolean reviewed) {
+        this.reviewed = reviewed;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public int getLikes() {
+        return likes;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
 
-	public String getPlayer() {
-		return player;
-	}
+    public String getLiker() {
+        return liker;
+    }
 
-	public void setPlayer(String player) {
-		this.player = player;
-	}
+    public void setLiker(String liker) {
+        this.liker = liker;
+    }
 
-	public String getServer() {
-		return server;
-	}
+    public String getIconMaterial() {
+        return iconMaterial;
+    }
 
-	public void setServer(String server) {
-		this.server = server;
-	}
+    public void setIconMaterial(String iconMaterial) {
+        this.iconMaterial = iconMaterial;
+    }
 
-	public String getLocation() {
-		return location;
-	}
+    public int getIconDurability() {
+        return iconDurability;
+    }
 
-	public void setLocation(String location) {
-		this.location = location;
-	}
+    public void setIconDurability(int iconDurability) {
+        this.iconDurability = iconDurability;
+    }
 
-	public long getCreateDate() {
-		return createDate;
-	}
+    public String getIntroduction() {
+        return introduction;
+    }
 
-	public void setCreateDate(long createDate) {
-		this.createDate = createDate;
-	}
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
+    }
 
-	public boolean isReviewed() {
-		return reviewed;
-	}
+    public void setTags(TagHandler tags) {
+        this.tags = tags;
+    }
 
-	public void setReviewed(boolean reviewed) {
-		this.reviewed = reviewed;
-	}
-
-	public int getLikes() {
-		return likes;
-	}
-
-	public void setLikes(int likes) {
-		this.likes = likes;
-	}
-
-	public String getLiker() {
-		return liker;
-	}
-
-	public void setLiker(String liker) {
-		this.liker = liker;
-	}
-
-	public String getIconMaterial() {
-		return iconMaterial;
-	}
-
-	public void setIconMaterial(String iconMaterial) {
-		this.iconMaterial = iconMaterial;
-	}
-
-	public int getIconDurability() {
-		return iconDurability;
-	}
-
-	public void setIconDurability(int iconDurability) {
-		this.iconDurability = iconDurability;
-	}
-
-	public String getIntroduction() {
-		return introduction;
-	}
-
-	public void setIntroduction(String introduction) {
-		this.introduction = introduction;
-	}
-
-	public void setTags(TagHandler tags) {
-		this.tags = tags;
-	}
-
-	public TagHandler getTags() {
-		if (this.tags == null) {
-			return TagHandler.NULL_TAG;
-		}
-		return tags;
-	}
+    public TagHandler getTags() {
+        if (this.tags == null) {
+            return TagHandler.NULL_TAG;
+        }
+        return tags;
+    }
 }

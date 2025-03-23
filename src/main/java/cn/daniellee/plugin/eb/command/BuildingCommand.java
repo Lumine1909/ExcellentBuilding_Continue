@@ -12,13 +12,23 @@ import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 
-public class BuildingCommand implements CommandExecutor {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class BuildingCommand implements TabExecutor {
+
+	public BuildingCommand() {
+		Bukkit.getPluginCommand("excellentbuilding").setExecutor(this);
+		Bukkit.getPluginCommand("excellentbuilding").setTabCompleter(this);
+	}
 
 	@Override
 	public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
@@ -95,4 +105,20 @@ public class BuildingCommand implements CommandExecutor {
 		commandSender.spigot().sendMessage(reloadHelp);
 	}
 
+	@Override
+	public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
+		List<String> suggestion = new ArrayList<>();
+		if (args.length <= 1) {
+			if (sender.hasPermission("building.command.submit")) {
+				suggestion.add("submit");
+			}
+			if (sender.hasPermission("building.command.review")) {
+				suggestion.add("review");
+			}
+			if (sender.hasPermission("building.command.reload")) {
+				suggestion.add("reload");
+			}
+		}
+		return suggestion;
+	}
 }

@@ -37,7 +37,7 @@ public class ExcellentBuilding extends JavaPlugin {
             Bukkit.getPluginManager().registerEvents(new MenuListener(), this);
             Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
 
-            Bukkit.getPluginCommand("excellentbuilding").setExecutor(new BuildingCommand());
+            new BuildingCommand();
 
             bungeecord = Bukkit.getServer().spigot().getConfig().getBoolean("settings.bungeecord", false);
 

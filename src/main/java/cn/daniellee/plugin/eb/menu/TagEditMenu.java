@@ -62,4 +62,4 @@ public class TagEditMenu implements InventoryHolder {
             player.openInventory(prevMenu.getInventory());
         });
     }
- }
+}

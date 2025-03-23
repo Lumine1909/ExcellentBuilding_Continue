@@ -4,38 +4,36 @@ import java.util.List;
 
 public class Edit {
 
-	private String id;
+    private String id;
+    private String operation;
+    private List<String> introduction; // 编辑介绍时的缓存
 
-	private String operation;
+    public Edit(String id, String operation) {
+        this.id = id;
+        this.operation = operation;
+    }
 
-	private List<String> introduction; // 编辑介绍时的缓存
+    public String getId() {
+        return id;
+    }
 
-	public Edit(String id, String operation) {
-		this.id = id;
-		this.operation = operation;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public String getOperation() {
+        return operation;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
 
-	public String getOperation() {
-		return operation;
-	}
+    public List<String> getIntroduction() {
+        return introduction;
+    }
 
-	public void setOperation(String operation) {
-		this.operation = operation;
-	}
-
-	public List<String> getIntroduction() {
-		return introduction;
-	}
-
-	public void setIntroduction(List<String> introduction) {
-		this.introduction = introduction;
-	}
+    public void setIntroduction(List<String> introduction) {
+        this.introduction = introduction;
+    }
 }
